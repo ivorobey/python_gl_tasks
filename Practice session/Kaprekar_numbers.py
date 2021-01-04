@@ -12,9 +12,7 @@
 
 
 def is_kaprekar(num):
-    # l=1
-    # while l<=n : l*=10
-    # return n== (n*n)//l + (n*n)%l
+    
     string_num = str(num**2)
     for i in range(1,len(string_num)):
         if int(string_num[:i])+int(string_num[i:])==num:

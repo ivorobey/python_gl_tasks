@@ -8,7 +8,7 @@ def get_equilibriums(list_):
         equi = []
         x = 0
         
-        for i in A:
+        for _ in A:
             leftList = A[0:x]
             rightList = A[x+1:]
             if sum(leftList) == sum(rightList):
