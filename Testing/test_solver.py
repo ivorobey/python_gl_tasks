@@ -9,12 +9,17 @@ class TestAddCase(TestCase):
 
 class TestSquareEquationSolver(TestCase):
     def test_02_reises_types(self):
-        try:
-            square_equation_solver("1",1,1.5)
-        except TypeError as e:
-            print("Ok, eror ",e)
-        else:
-            self.fail("Did not raise")
+        with self.assertRaises(TypeError):
+            square_equation_solver("",1,1.5)
+
+    def test_03_res_is_tuple(self):
+        res=square_equation_solver(0,0,0)
+        self.assertIsInstance(res,tuple)
+
+    def test_03_noresults(self):
+        res=square_equation_solver(0,0,1)
+        self.assertEqual(res,(None,None))
+        
 
 
 if __name__=='__main__':
